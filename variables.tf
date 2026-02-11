@@ -21,12 +21,12 @@ EOT
     name                                   = string
     resource_group_name                    = string
     subnet_id                              = string
-    allow_new_private_endpoint_connections = optional(bool, true)
+    allow_new_private_endpoint_connections = optional(bool) # Default: true
     dedicated_host_count                   = optional(number)
-    internal_load_balancing_mode           = optional(string, "None")
-    remote_debugging_enabled               = optional(bool, false)
+    internal_load_balancing_mode           = optional(string) # Default: "None"
+    remote_debugging_enabled               = optional(bool)   # Default: false
     tags                                   = optional(map(string))
-    zone_redundant                         = optional(bool, false)
+    zone_redundant                         = optional(bool) # Default: false
     cluster_setting = optional(object({
       name  = string
       value = string
