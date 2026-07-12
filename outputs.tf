@@ -1,3 +1,7 @@
+output "app_service_environment_v3s_id" {
+  description = "Map of id values across all app_service_environment_v3s, keyed the same as var.app_service_environment_v3s"
+  value       = { for k, v in azurerm_app_service_environment_v3.app_service_environment_v3s : k => v.id }
+}
 output "app_service_environment_v3s_allow_new_private_endpoint_connections" {
   description = "Map of allow_new_private_endpoint_connections values across all app_service_environment_v3s, keyed the same as var.app_service_environment_v3s"
   value       = { for k, v in azurerm_app_service_environment_v3.app_service_environment_v3s : k => v.allow_new_private_endpoint_connections }
