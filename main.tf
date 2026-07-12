@@ -12,7 +12,7 @@ resource "azurerm_app_service_environment_v3" "app_service_environment_v3s" {
   zone_redundant                         = each.value.zone_redundant
 
   dynamic "cluster_setting" {
-    for_each = each.value.cluster_setting != null ? [each.value.cluster_setting] : []
+    for_each = each.value.cluster_setting != null ? each.value.cluster_setting : []
     content {
       name  = cluster_setting.value.name
       value = cluster_setting.value.value

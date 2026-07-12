@@ -27,10 +27,10 @@ EOT
     remote_debugging_enabled               = optional(bool)   # Default: false
     tags                                   = optional(map(string))
     zone_redundant                         = optional(bool) # Default: false
-    cluster_setting = optional(object({
+    cluster_setting = optional(list(object({
       name  = string
       value = string
-    }))
+    })))
   }))
 }
 
